@@ -17,6 +17,8 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="assets/css/main.css" id="app-style" rel="stylesheet" type="text/css" />
+
 
     </head>
 
@@ -210,12 +212,36 @@
 
                         <!-- start page title -->
                         <h1 class="mb-3">Recherche d'Audit Trail</h1>
-                        <form action="#" class="row">
-                            <div class="col-md-6">
-                                <label for="" class="form-label">Numéro de série</label>
-                                <input type="text" name="nameAuditTrail" class="form-control">
-                            </div>
-                        </form>
+                        <div class="card">
+                            <form action="#">
+                                <div class="row">
+                                   <div class="col-md-6">
+                                        <label for="" class="form-label">Numéro de série</label>
+                                        <input type="text" name="nameAuditTrail" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Organisation </label>
+                                        <select name="organisationMere" class="form-select mb-3">
+                                            <option value="">-- Séléctionnez une organisation  --</option>
+                                            <option value="Thermolabo">THERMOLABO</option>
+                                            <option value="Medochemie">MEDOCHEMIE</option>
+                                            <option value="Mylan">MYLAN</option>
+                                            <option value="MylanItalie">MYLAN ITALIE</option>
+                                        </select>  
+                                    </div> 
+                                </div>
+                                <div class="row">
+                                    <label for="">Date de début / Date de fin de la séléction </label>
+                                    <div class="input-daterange input-group mb-3" id="datepicker6" data-date-format="dd M, yyyy" data-date-autoclose="true" data-provide="datepicker" data-date-container='#datepicker6'>
+                                        <input type="date" class="form-control text-center" name="start" placeholder="Start Date" />
+                                        <input type="date" class="form-control text-center" name="end" placeholder="End Date" />
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary" type="submit">Valider</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                         <!-- end page title --> 
                         
                     </div> <!-- container-fluid -->

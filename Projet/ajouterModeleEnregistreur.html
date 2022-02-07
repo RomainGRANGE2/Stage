@@ -213,7 +213,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12 retourListe">
-                                <h1>Ajouter un Enregistreur</h1>
+                                <h1>Ajouter un Format d'Enregistreur</h1>
                                 <button type="button" class="btn btn-primary waves-effect waves-light" onclick="history.back()">Retour à la liste</button>
                             </div>
                         </div>
@@ -225,120 +225,102 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Numéro de série :</label>
-                                                    <input class="form-control mb-3" type="text" name="numeroSerie">
+                                                    <label for="" class="form-label">Nom</label>
+                                                    <input class="form-control mb-3" type="text" name="nom">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Référence produit :</label>
-                                                    <input class="form-control mb-3" type="textarea" name="refProd">
+                                                    <label for="" class="form-label">Id Identification</label>
+                                                    <input class="form-control mb-3" type="textarea" name="Identification">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="mb-3">
-                                                    <label for="">Organisation :</label>
-                                                    <select name="organisation" class="form-select mb-3">
-                                                        <option value="Thermolabo">THERMOLABO</option>
-                                                        <option value="Medochemie">MEDOCHEMIE</option>
-                                                        <option value="Mylan">MYLAN</option>
-                                                        <option value="MylanItalie">MYLAN ITALIE</option>
-                                                    </select>    
+                                                    <label for="" class="form-label">Préfixe</label>
+                                                    <input class="form-control mb-3" type="text" name="prefixe">  
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Type d'enregistreur :</label>
-                                                    <select name="typeEnregistreur" class="form-select mb-3">
-                                                        <option value="typeA">Type A</option>
-                                                        <option value="Freshliance">Freshliance V1.0</option>
-                                                        <option value="test345">test345</option>
-                                                        <option value="Freshtag">FreshTag</option>
-                                                    </select>
+                                                    <label for="" class="form-label">Suffixe</label>
+                                                    <input class="form-control mb-3" type="text" name="suffixe">
                                                 </div>
                                             </div>
                                             
                                             <div class="col-md-3">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Référence Transport :</label>
-                                                    <input class="form-control" type="text" name="refTransport">
+                                                    <label for="" class="form-label">Modèle :</label>
+                                                    <input class="form-control" type="text" name="modele">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">E-mail supplémentaire :</label>
-                                                    <input class="form-control" type="textarea" name="emailSupp">
+                                                    <label for="" class="form-label">Version</label>
+                                                    <input class="form-control" type="textarea" name="version">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row mb-3">
-                                            <div class="col-md-12">
-                                                <div>
-                                                    <div class="dropzone">
-                                                        <!-- <div class="fallback">
-                                                            <input name="file" type="file" multiple="multiple">
-                                                        </div> -->
-                                                        <div class="dz-message needsclick">
-                                                            <div class="mb-3">
-                                                                <i class="display-4 text-muted bx bxs-cloud-upload"></i>
-                                                            </div>
-                                                            <h4>Documents à ajouter (png, jpg, pdf, jpeg), tous les fichiers envoyés sont sauvegarder de manière permanante</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <h3>Mesures</h3>
+                                        <h3>Paramètres</h3>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Intervalle de mesure - HH:MM:SS :</label>
-                                                    <input class="form-control mb-3" type="text" name="intervalleMesure" value="00 : 10 : 00">
+                                                    <label for="" class="form-label">Nombre de lignes dans l'entête</label>
+                                                    <input class="form-control mb-3" type="number" name="nbLigne">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Début Délai - HH:MM :</label>
-                                                    <input class="form-control mb-3" type="text" name="débutDelai" value="00 : 00">
+                                                    <label for="" class="form-label">Position de la Date</label>
+                                                    <input class="form-control mb-3" type="number" name="positionDate">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Temp :</label>
-                                                    <select name="Temp" class="form-select mb-3">
-                                                        <option value="C">°C</option>
-                                                        <option value="F">°F</option>
-                                                    </select>
+                                                    <label for="" class="form-label">Position du Temps</label>
+                                                    <input class="form-control mb-3" type="number" name="positionTemps">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Date d'expiration :</label>
-                                                    <input class="form-control mb-3" type="date" name="dateExpiration">
+                                                    <label for="" class="form-label">Position de la Température</label>
+                                                    <input class="form-control mb-3" type="number" name="positionTemperature">
                                                 </div>
                                             </div>
                                             
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label for="" class="form-label">Temps Maximum d'enregistrement :</label>
-                                                    <input class="form-control mb-3" type="text" name="tpsMaxEnreg">
+                                                    <label for="" class="form-label">Zone UTC</label>
+                                                    <input class="form-control mb-3" type="number" name="zoneUTC">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="" class="form-label">Alarme MIN :</label>
-                                                <input class="form-control" type="text" name="alarmeMinimale">
-                                                <p class="mb-3">Pour valeur négative, utilisez "-", ne pas utilisez "+" pour valeurs positives</p>
+                                                <label for="" class="form-label">Format de la Date</label>
+                                                <input class="form-control mb-3" type="text" name="formatDate">
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="" class="form-label">Alarme MAX :</label>
-                                                <input class="form-control" type="text" name="alarmeMax">
-                                                <p class="mb-3">Pour valeur négative, utilisez "-", ne pas utilisez "+" pour valeurs positives</p>
+                                                <label for="" class="form-label">Format des Heures</label>
+                                                <input class="form-control mb-3" type="text" name="formatHeure">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="" class="form-label">Séparateur</label>
+                                                <input class="form-control mb-3" type="text" name="separateur">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="" class="form-label">Séparateur de la Température</label>
+                                                <input class="form-control mb-3" type="text" name="separateurTemperature">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="" class="form-label">Ligne de Départ</label>
+                                                <input class="form-control mb-3" type="number" name="ligneDepart">
                                             </div>
                                         </div>
                                         <div>
