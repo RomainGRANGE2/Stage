@@ -13,6 +13,8 @@
 
         <!-- Bootstrap Css -->
         <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
         <!-- Icons Css -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
@@ -216,63 +218,135 @@
                             </div>
                         </div>
                         <div class="card"> 
-                            <form class="row">
-                                <div class="mb-3 col-md-6">
-                                    <label for="" class="form-label">Numéro de série :</label>
-                                    <input class="form-control mb-3" type="text" name="numeroSerie">
-                                    <label for="" class="form-label">Type d'enregistreur :</label>
-                                    <select name="typeEnregistreur" class="form-select mb-3">
-                                        <option value="typeA">Type A</option>
-                                        <option value="Freshliance">Freshliance V1.0</option>
-                                        <option value="test345">test345</option>
-                                        <option value="Freshtag">FreshTag</option>
-                                    </select>
-                                    <label for="" class="form-label">Intervalle de mesure - HH:MM:SS :</label>
-                                    <input class="form-control mb-3" type="text" name="intervalleMesure" value="00 : 10 : 00">
-                                    <label for="" class="form-label">Alarme MIN :</label>
-                                    <input class="form-control" type="text" name="alarmeMinimale">
-                                    <p class="mb-3">Pour valeur négative, utilisez "-", ne pas utilisez "+" pour valeurs positives</p>
-                                    <label for="" class="form-label">Temp :</label>
-                                    <select name="Temp" class="form-select mb-3">
-                                        <option value="C">°C</option>
-                                        <option value="F">°F</option>
-                                    </select>
-                                    <label for="" class="form-label">Début Délai - HH:MM :</label>
-                                    <input class="form-control mb-3" type="text" name="débutDelai" value="00 : 00">
-                                    <label for="" class="form-label">Référence Transport :</label>
-                                    <input class="form-control" type="text" name="refTransport">
-                                </div>  
-                                <div class="mb-3 col-md-6">
-                                    <label for="">Organisation :</label>
-                                    <select name="organisation" class="form-select mb-3">
-                                        <option value="Thermolabo">THERMOLABO</option>
-                                        <option value="Medochemie">MEDOCHEMIE</option>
-                                        <option value="Mylan">MYLAN</option>
-                                        <option value="MylanItalie">MYLAN ITALIE</option>
-                                    </select>
-                                    <label for="" class="form-label">Temps Maximum d'enregistrement :</label>
-                                    <input class="form-control mb-3" type="text" name="tpsMaxEnreg">
-                                    <label for="" class="form-label">Date d'expiration :</label>
-                                    <input class="form-control mb-3" type="date" name="dateExpiration">
-                                    <label for="" class="form-label">Alarme MAX :</label>
-                                    <input class="form-control" type="text" name="alarmeMax">
-                                    <p class="mb-3">Pour valeur négative, utilisez "-", ne pas utilisez "+" pour valeurs positives</p>
-                                    <label for="" class="form-label">E-mail supplémentaire :</label>
-                                    <input class="form-control" type="textarea" name="emailSupp">
-                                    <p>Utilisez "," pour séparer les emails</p>
-                                    <label for="" class="form-label">Référence produit :</label>
-                                    <input class="form-control mb-3" type="textarea" name="refProd">
-                                    <label for="" class="form-label">Documents à ajouter (png, jpg, pdf, jpeg), tous les fichiers envoyés sont sauvegarder de manière permanante :</label>
-                                    <div class="dropzone dz-clickable">
-                                        <div class="dz-message needsclick">
-                                            <div class="mb-3">
-                                                <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="needs-validation" novalidate method="post">
+                                        <h3>Infomations</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Numéro de série :</label>
+                                                    <input class="form-control mb-3" type="text" name="numeroSerie">
+                                                </div>
                                             </div>
-                                            <h4>Drop files here or click to upload.</h4>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Référence produit :</label>
+                                                    <input class="form-control mb-3" type="textarea" name="refProd">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </form>   
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label for="">Organisation :</label>
+                                                    <select name="organisation" class="form-select mb-3">
+                                                        <option value="Thermolabo">THERMOLABO</option>
+                                                        <option value="Medochemie">MEDOCHEMIE</option>
+                                                        <option value="Mylan">MYLAN</option>
+                                                        <option value="MylanItalie">MYLAN ITALIE</option>
+                                                    </select>    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Type d'enregistreur :</label>
+                                                    <select name="typeEnregistreur" class="form-select mb-3">
+                                                        <option value="typeA">Type A</option>
+                                                        <option value="Freshliance">Freshliance V1.0</option>
+                                                        <option value="test345">test345</option>
+                                                        <option value="Freshtag">FreshTag</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Référence Transport :</label>
+                                                    <input class="form-control" type="text" name="refTransport">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">E-mail supplémentaire :</label>
+                                                    <input class="form-control" type="textarea" name="emailSupp">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-12">
+                                                <div>
+                                                    <div class="dropzone">
+                                                        <!-- <div class="fallback">
+                                                            <input name="file" type="file" multiple="multiple">
+                                                        </div> -->
+                                                        <div class="dz-message needsclick">
+                                                            <div class="mb-3">
+                                                                <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                                                            </div>
+                                                            <h4>Documents à ajouter (png, jpg, pdf, jpeg), tous les fichiers envoyés sont sauvegarder de manière permanante</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <h3>Mesures</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Intervalle de mesure - HH:MM:SS :</label>
+                                                    <input class="form-control mb-3" type="text" name="intervalleMesure" value="00 : 10 : 00">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Début Délai - HH:MM :</label>
+                                                    <input class="form-control mb-3" type="text" name="débutDelai" value="00 : 00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Temp :</label>
+                                                    <select name="Temp" class="form-select mb-3">
+                                                        <option value="C">°C</option>
+                                                        <option value="F">°F</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Date d'expiration :</label>
+                                                    <input class="form-control mb-3" type="date" name="dateExpiration">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="" class="form-label">Temps Maximum d'enregistrement :</label>
+                                                    <input class="form-control mb-3" type="text" name="tpsMaxEnreg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="" class="form-label">Alarme MIN :</label>
+                                                <input class="form-control" type="text" name="alarmeMinimale">
+                                                <p class="mb-3">Pour valeur négative, utilisez "-", ne pas utilisez "+" pour valeurs positives</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="" class="form-label">Alarme MAX :</label>
+                                                <input class="form-control" type="text" name="alarmeMax">
+                                                <p class="mb-3">Pour valeur négative, utilisez "-", ne pas utilisez "+" pour valeurs positives</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary" type="submit">Submit form</button>
+                                        </div>
+                                    </form>
+                                  </div>                                 
+                            </div>   
                         </div>
                         <footer class="footer">
                             <div class="container-fluid">
@@ -312,6 +386,8 @@
         <script src="assets/js/app.js"></script>
         <script src="assets/js/main.js"></script>
         <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+        <script src="assets/libs/dropzone/min/dropzone.min.js"></script>
+
 
         <!-- apexcharts init -->
         <script src="assets/js/pages/apexcharts.init.js"></script>
